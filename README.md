@@ -1,7 +1,7 @@
 # docker_lemp_php7_mysql
-Demo repo to start a set of docker containers implementing a fully functional lemp 
+Demo repo to start a set of docker containers implementing a fully functional lemp architecture
 
-Exposes two containers, a web instance of Symfony under Nginx/php-fpm
+See the docker-compose.yml file to run it with mysql
 
 ports 
 

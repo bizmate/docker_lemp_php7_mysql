@@ -1,5 +1,5 @@
-FROM vincentchalamon/symfony
-MAINTAINER Diego Gullo <diego_gullo@gmail.com>
+FROM php:fpm
+MAINTAINER Diego Gullo <diego_gullo@bizmate.biz>
 
 # Install Composer
 RUN php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php \
