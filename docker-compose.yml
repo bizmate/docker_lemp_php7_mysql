@@ -10,9 +10,9 @@ web:
 mysql:
     image: mysql
     container_name: Bizmate-MySQL
-    net: "host"
+    #net: "host"
     environment:
         MYSQL_ROOT_PASSWORD: 'toor'
-        MYSQL_USER: 'root'
+        MYSQL_USER: 'dev'
         MYSQL_PASSWORD: 'Bizmate-symfony2016'
         MYSQL_DATABASE: 'bizmate'
