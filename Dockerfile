@@ -5,7 +5,7 @@ MAINTAINER Diego Gullo <diego_gullo@bizmate.biz>
 RUN apt-get update \
     && apt-get install -y zlib1g-dev libicu-dev g++ \
     && docker-php-ext-configure intl \
-    && docker-php-ext-install mbstring pdo pdo_mysql intl
+    && docker-php-ext-install mbstring pdo pdo_mysql intl opcache
 
 # Install Composer
 RUN php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php \
