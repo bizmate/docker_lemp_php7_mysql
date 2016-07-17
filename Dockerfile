@@ -6,7 +6,7 @@ RUN apt-get update \
     && apt-get install -y zlib1g-dev libicu-dev g++ \
     && pecl install xdebug \
     && docker-php-ext-configure intl \
-    && docker-php-ext-install mbstring pdo pdo_mysql intl opcache
+    && docker-php-ext-install mbstring pdo pdo_mysql intl opcache \
     && docker-php-ext-enable xdebug
 
 # Install Composer
