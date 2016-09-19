@@ -3,11 +3,13 @@ MAINTAINER Diego Gullo <diego_gullo@bizmate.biz>
 
 # Install php extensions
 RUN apt-get update \
-    && apt-get install -y zlib1g-dev libicu-dev g++ \
+    && apt-get install -y zlib1g-dev libicu-dev g++ libfreetype6-dev libjpeg62-turbo-dev libpng12-dev libmcrypt-dev \
     && pecl install xdebug \
     && pecl install zip \
     && docker-php-ext-configure intl \
-    && docker-php-ext-install mbstring pdo pdo_mysql intl opcache \
+    && docker-php-ext-install -j$(nproc) iconv mcrypt mbstring pdo pdo_mysql intl opcache \
+    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-enable xdebug \
     && docker-php-ext-enable zip
 
